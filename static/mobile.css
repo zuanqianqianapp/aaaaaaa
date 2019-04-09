@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+body {
+    background-color: #000;
+    width: 100%;
+}
+
+ img {
+    width: 100%;
+    margin: 0 0 -15px 0;
+    border: none;
+}
+#pageContain .contain {
+    position: relative;
+}
+#goToTop {
+    background: url(./images/arrow.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    z-index: 999;
+}
+.btn-box {
+    position: absolute;
+    top: 55%;
+    left: 14%;
+    width: 85%;
+}
+.btn-box a {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    background-color: #c5e020;
+    width: 80%;
+    float: left;
+    border-radius: 30px;
+}
+.btn-box a:nth-child(2) {
+    margin: 0 2%;
+}
+.btn-ios {
+    position: absolute;
+    bottom: 17%;
+    left: 17%;
+    width: 83%;
+    text-align: center;
+}
+.btn-ios a {
+    background: url(./images/btn-download.png) no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 60px;
+    display: block;
+}
+.btn-ios  p {
+    color: #fff;
+    margin: 0 0 0 -55px;
+    font-size: 16px;
+}
+
+.over{
+    overflow-y: hidden;
+}

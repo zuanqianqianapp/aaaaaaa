@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>APP下载页面</title>
+    <!-- <link rel="stylesheet" type="text/css" href="resources/g.css"> -->
+    <link rel="stylesheet" type="text/css" href="resources/download.css">
+    <!-- <link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css"> -->
+
+    <!-- <style type="text/css">
+        /*核心css*/
+        .wxtip {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 998;
+            display: none;
+        }
+
+        .wxtip-icon {
+            width: 52px;
+            height: 67px;
+            background: url(resources/weixin-tip.png) no-repeat;
+            display: block;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .wxtip-txt {
+            padding-top: 107px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .install-g {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 80%;
+            background: black;
+            border-radius: .213333rem .213333rem 0 0;
+        }
+
+        .appdownload-wrap {
+            position: relative;
+        }
+
+        .content {
+            margin-top: 1.173333rem;
+            height: calc(100% - 1.173333rem);
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+    <style>
+        .install-guide .guide-list-wrapper .content .guide-list .guide-item .item-title {
+            line-height: .666667rem;
+            color: #3b4d88;
+            /* font-weight: 500; */
+        }
+
+        p {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .install-guide {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .install-guide .guide-list-wrapper {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 80%;
+            background: #f2f2f2;
+            border-radius: .213333rem .213333rem 0 0;
+        }
+
+        html {
+            font-size: 37.52px;
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        .install-guide .guide-list-wrapper .header {
+            position: fixed;
+            width: 100%;
+            height: 1.173333rem;
+            padding: 0 .4rem;
+            background: #f2f2f2;
+            border-radius: .213333rem .213333rem 0 0;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .install-guide .guide-list-wrapper .content {
+            margin-top: 0.2rem;
+            height: calc(100% - 1.173333rem);
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 50px;
+        }
+
+        .wrap {
+            width: 100%;
+            -webkit-user-select: none;
+            user-select: none;
+            background: #f7f9fa;
+            overflow-x: hidden;
+        }
+
+        .wrap {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            color: #333;
+            font-size: 62.5%;
+            -webkit-text-size-adjust: none;
+            background: #f8f9fb;
+        }
+
+        .wrap {
+            margin: 0;
+            padding: 0;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        /*a, img {-webkit-touch-callout: none;}img {border: 0 none;max-width: 100%;}*/
+        /*a {text-decoration: none;-webkit-tap-highlight-color:transparent;}a:hover {text-decoration: none}*/
+        .wrap {
+            padding: 1% -1% 1% 1%;
+            font-size: 16px;
+            line-height: 24px;
+            overflow: hidden;
+        }
+
+        /*.blue{color: #2296e8;}.wrap .image{margin:8px auto; width: 88%; text-align: center;}*/
+        /*.text{width: 100%; text-align: left; margin:10px 0; color: #333}.red{color: red;}*/
+        /*.btn{  width: 70%;display: block;font-size: 16px;color: #fff;text-align: center; height: 36px;line-height: 36px; margin:12px auto 0;background: #1778e5; border-radius: 4px}*/
+        .fixed {
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            display: none;
+        }
+
+        @media screen and (min-width:374) and (max-width: 376px) {
+            html {
+                font-size: 37.52px;
+            }
+        }
+
+        .install-guide .guide-list-wrapper .content .guide-list .guide-item .item-detail-wrapper-2 .item-detail-button {
+            width: 6.4rem;
+            height: 1.28rem;
+            margin: .533333rem auto;
+            background: linear-gradient(180deg, #85bee5, #6270c7);
+            box-shadow: 0 0.053333rem 0.266667rem 0 #bed7f3;
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.28rem;
+            border-radius: .64rem;
+        }
+
+        .install-guide .guide-list-wrapper .content .guide-list .guide-item .item-detail-wrapper-2 .item-detail-subtitle[data-v-d84ee700] {
+            color: #3a4b8a;
+            font-size: 16px;
+            text-align: center
+        }
+
+        .install-guide .guide-list-wrapper .back-top-wrapper {
+            float: right;
+            width: 1.706667rem;
+            margin-right: .533333rem;
+            padding-bottom: 1.333333rem;
+        }
+
+        .install-guide .guide-list-wrapper .content .guide-list .guide-item .item-detail-wrapper-1 .item-detail .detail-content .detail-icon .icon-title[data-v-d84ee700] {
+            color: #666;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media screen and (min-width:319px) and (max-width: 321px) {
+            html {
+                font-size: 32px;
+            }
+        }
+
+        .install-guide .guide-list-wrapper .footer .footer-tip[data-v-d84ee700] {
+            width: 100%;
+            padding: 0 1.333333rem;
+            color: #3a4b8a;
+            font-weight: 500;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .item-image-wrapper img {
+            width: 100%;
+        }
+
+        .close img {
+            float: right;
+            margin-right: 15px;
+            width: 24px;
+            height: 24px;
+        }
+
+        figure img {
+            border: 2px solid white;
+            border-radius: 40px;
+        }
+    </style> -->
+
+    <link rel="stylesheet" type="text/css" href="static/mobile.css">
+</head>
+
+
+<body class="appdownload-body">
+    <div id="pageContain">
+        <div class="page page1 current">
+            <div class="contain">
+                <img src="./static/images/000.jpg">
+                <!-- <div class="btn-box" style="display:none;">
+                    <a href="javascript:;" class="android androidBtn" 
+                        id="a-android" target="_blank" onClick="my_click()">安卓下载</a>
+                    <a href="javascript:;" class="ios iosBtn" 
+                        id="a-ios" target="_blank" onClick="my_click()">苹果APP下载</a>
+                </div> -->
+                <div class="btn-ios ios">
+                    <a href="javascript:void(0);" class="android androidBtn"  id="a-android"></a>
+                    <a href="javascript:void(0);" class="ios iosBtn"  id="a-ios"></a>
+                    <p class="btn-more  iosBtn">苹果IOS用户必看</p>                
+                </div>
+            </div>
+            <div class="ios iosBtn">
+                <img src="./static/images/001.jpg">                
+                <img src="./static/images/002.jpg">                
+                <img src="./static/images/003.jpg">                
+                <img src="./static/images/004.jpg">                
+                <img src="./static/images/005.jpg">                
+                <img src="./static/images/006.jpg">            
+            </div>
+        </div>
+    </div>
+
+    <div id="goToTop"></div>
+    <div class="appdownload-wrap">
+       
+        <!-- <p class="appdownload-note hidden">点击下面链接下载客户端，查看更多精彩内容!!!</p> -->
+        <!-- <div class="appdownload-btns" id="divDownload-ios" style="display: none;"> -->
+            <!--<a class="btn item-ios" href="itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/q351941406/488679798/master/PropertyList.plist" target="_blank">-->
+            <!-- <a class="btn item-ios" id="a-ios" target="_blank" onClick="my_click()"> -->
+                <!-- <span class="ico ico-ios"></span> -->
+                <!-- <span class="txt">iPhone版</span> -->
+            <!-- </a> -->
+        <!-- </div> -->
+        <!-- <div class="appdownload-btns" id="divDownload-android" style="display: none;"> -->
+            <!--<a class="btn item-android" href="https://github.com/q351941406/488679798/releases/download/1.0/mgm_1.1_20180707.apk">-->
+            <!-- <a class="btn item-android" id="a-android" target="_blank" onClick="my_click()"> -->
+                <!-- <span class="ico ico-android"></span> -->
+                <!-- <span class="txt">安卓版</span> -->
+            <!-- </a> -->
+        <!-- </div> -->
+
+        <!--<span class="appdownload-check-erwei">查看二维码</span>-->
+        <!-- <p class="appdownload-copyright">Copyright © All Rights Reserved</p> -->
+
+
+        <!-- <div class="appdownload-erwei-overlay" style="display: none;">
+            <div class="container">
+                <p>免费会员影视-免费观看所有VIP视频,无充值,无会员</p>
+                <img src="resources/1451458631463625.png" width="112" height="112" alt="">
+            </div>
+        </div>
+
+        <section class="install-guide">
+            <div data-v-d84ee700="" class="guide-list-wrapper">
+
+                <div class="close clearfix"><img src="img/close.png.png" style="margin-top:10px;"></div>
+                <div data-v-d84ee700="" id="guideListContent" class="content">
+
+                    <p><img src="img/wap_banner.jpg" width="100%"></p>
+                    <div class="wrap">
+                        <div class="text"><span class="blue">别慌 ! </span>您只需在进入【设置>通用>描述文件】，信任描述文件即可正常打开。</div>
+                        <div class="text blue"><b>详细图文教程：</b></div>
+                        <div class="text"> 1.升级iOS9后，打开App时，出现下图弹窗，<span class="red">记住红色部分的描述文件名</span></div>
+
+                        <div class="image"><img
+                                src="https://tximg.slooti.com/dev3_web/img.itools.cn/m.itools.cn/img/advice/img01.jpg"
+                                width="100%"></div>
+
+                        <div class="text">2.然后在设备中点击进入<span class="red">【设置>通用>描述文件】</span></div>
+
+                        <div class="image"><img
+                                src="https://tximg.slooti.com/dev3_web/img.itools.cn/m.itools.cn/img/advice/img02.jpg"
+                                width="60"></div>
+                        <div class="image"><img
+                                src="https://tximg.slooti.com/dev3_web/img.itools.cn/m.itools.cn/img/advice/img03.jpg"
+                                width="100%"></div>
+
+                        <div class="text">3.找到刚才记住的描述文件，点击<span class="red">【信任】</span>，您的App就能正常打开了</div>
+
+                        <div class="image"><img
+                                src="https://tximg.slooti.com/dev3_web/img.itools.cn/m.itools.cn/img/advice/img04.jpg"
+                                width="100%"></div>
+                        <div class="image"><img
+                                src="https://tximg.slooti.com/dev3_web/img.itools.cn/m.itools.cn/img/advice/img05.jpg"
+                                width="100%" style="padding-bottom:70px;"></div>
+
+                    </div>
+                    <div class="fixed"><a href="https://m.itools.cn/itools.mobileprovision" class="btn btn_safari"
+                            onclick="_hmt.push(['_trackEvent','1','2','3']);" id="download_button">点我去信任</a></div>
+                    <script type="text/javascript" src="resources/zepto.min.js"></script>
+
+                </div>
+        </section> -->
+
+
+        <!-- <div class="wxtip" id="JweixinTip" style="display: none;">
+            <span class="wxtip-icon"></span>
+            <p class="wxtip-txt">点击右上角<br />选择在浏览器中打开</p>
+        </div> -->
+
+    </div>
+</body>
+
+
+<script type="text/javascript" src="resources/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+    $('.install-guide').hide(); 
+    $('.close').on('click', function () { $('.install-guide').hide(); $('.appdownload-logo').css('background', 'rgba(0,0,0,0)'); })
+    var android = document.getElementById("divDownload-android"),
+        ios = document.getElementById("divDownload-ios");
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if (isAndroid) {
+        //这个是安卓操作系统
+        // android.style.display = "block";
+    }
+    if (isIOS) {
+        //这个是ios操作系统
+        // ios.style.display = "block";
+    }
+
+
+    // function my_click() {
+    //     if (isAndroid) {
+    //         //这个是安卓操作系统
+    //         var a = document.getElementById("a-android");
+    //         a.href = "http://sign.static.mayizuanqian.com/sign/av38%281%29.apk";
+    //         a.setAttribute("onclick", '');
+    //         //激发标签点击事件OVER
+    //         a.click("return false");
+    //     }
+    //     if (isIOS) {
+    //         ////这个是ios操作系统
+    //         //var a = document.getElementById("a-ios");
+    //         //a.href = "itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/q351941406/488679798/master/PropertyList.plist";
+    //         //a.setAttribute("onclick",'');
+    //         ////激发标签点击事件OVER
+    //         //a.click("return false");
+    //         $('.install-guide').show(); $('.appdownload-logo').css('background', 'rgba(0,0,0,.7)');
+    //         window.location = "itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/zuanqianqianapp/22221138894/master/PropertyList.plist";
+    //     }
+    // }
+
+
+    $('.back-top-wrapper').on('click', function () {
+        $('.content').animate({ scrollTop: 0 }, 1000);
+        return false;
+    })
+    function weixinTip(ele) {
+        console.log("s")
+        var ua = navigator.userAgent;
+        var isWeixin = !!/MicroMessenger/i.test(ua);
+        if (isWeixin) {// 如果是微信
+            ele.onclick = function (e) {
+                window.event ? window.event.returnValue = false : e.preventDefault();
+                document.getElementById('JweixinTip').style.display = 'block';
+            }
+            document.getElementById('JweixinTip').onclick = function () {
+                this.style.display = 'none';
+            }
+        }
+    }
+    var btn1 = document.getElementById('divDownload-android');//下载一
+    weixinTip(btn1);
+    $(function () {
+        var checkErweiBtn = $(".appdownload-check-erwei"),
+            erweiOverlay = $(".appdownload-erwei-overlay"),
+            erweiOverlayContainer = erweiOverlay.find(".container");
+        checkErweiBtn.click(function () {
+            erweiOverlay.fadeIn();
+        });
+        erweiOverlay.click(function (evt) {
+            evt.stopPropagation();
+            if (!$(evt.target).hasClass("container") && !$(evt.target).parents().hasClass("container")) {
+                console.log($(evt.target));
+                $(this).fadeOut();
+            }
+        });
+    });
+</script>
+<!-- 以下为openinstall集成代码，建议在html文档中尽量靠前放置，加快初始化过程 -->
+<!-- 强烈建议直接引用下面的cdn加速链接，以得到最及时的更新，我们将持续跟踪各种主流浏览器的变化，提供最好的服务；不推荐将此js文件下载到自己的服务器-->
+<script type="text/javascript" charset="UTF-8" src="//res.cdn.openinstall.io/openinstall.js"></script>
+<script type="text/javascript">
+    //openinstall初始化时将与openinstall服务器交互，应尽可能早的调用
+    /*web页面向app传递的json数据(json string/js Object)，应用被拉起或是首次安装时，通过相应的android/ios api可以获取此数据*/
+    var data = OpenInstall.parseUrlParams();//openinstall.js中提供的工具函数，解析url中的所有查询参数
+    new OpenInstall({
+        /*appKey必选参数，openinstall平台为每个应用分配的ID*/
+        appKey: "cvuxxe",
+        /*可选参数，自定义android平台的apk下载文件名，只有apk在openinstall托管时才有效；个别andriod浏览器下载时，中文文件名显示乱码，请慎用中文文件名！*/
+        //apkFileName : 'com.fm.openinstalldemo-v2.2.0.apk',
+        /*可选参数，是否优先考虑拉起app，以牺牲下载体验为代价*/
+        //preferWakeup:true,
+        /*自定义遮罩的html*/
+        //mask:function(){
+        //  return "<div id='openinstall_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
+        //},
+        /*openinstall初始化完成的回调函数，可选*/
+        onready: function () {
+
+            var m = this, button = document.getElementById("a-ios");
+            button.style.visibility = "visible";
+
+            /*在app已安装的情况尝试拉起app*/
+            m.schemeWakeup();
+            /*用户点击某个按钮时(假定按钮id为downloadButton)，安装app*/
+            button.onclick = function () {
+                m.wakeupOrInstall();
+                $('.install-guide').show(); $('.appdownload-logo').css('background', 'rgba(0,0,0,.7)');
+                return false;
+            }
+
+
+            var g = this, button2 = document.getElementById("a-android");
+            button2.style.visibility = "visible";
+
+            /*在app已安装的情况尝试拉起app*/
+            m.schemeWakeup();
+            /*用户点击某个按钮时(假定按钮id为downloadButton)，安装app*/
+            button2.onclick = function () {
+                m.wakeupOrInstall();
+                return false;
+            }
+
+        }
+    }, data);
+
+</script>
+
+<script type="text/javascript" src="static/mobile.js"></script>
+</html>
